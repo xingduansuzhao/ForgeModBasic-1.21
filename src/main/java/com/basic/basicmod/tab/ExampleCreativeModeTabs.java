@@ -1,6 +1,7 @@
 package com.basic.basicmod.tab;
 
 import com.basic.basicmod.ExampleMod;
+import com.basic.basicmod.block.ExampleBlocks;
 import com.basic.basicmod.item.ExampleItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -24,6 +25,7 @@ public class ExampleCreativeModeTabs {
             .withSearchBar()
             .displayItems((parameters, output) -> {
                 output.accept(ExampleItems.MEDALLA_ANIVERSARIO.get());
+                output.accept(ExampleBlocks.ANIVERSARIO_STONE_ITEM.get());
             }).build());
 
     public static void register(IEventBus eventBus) {

@@ -1,5 +1,6 @@
 package com.basic.basicmod;
 
+import com.basic.basicmod.block.ExampleBlocks;
 import com.basic.basicmod.item.ExampleItems;
 import com.basic.basicmod.tab.ExampleCreativeModeTabs;
 import com.mojang.logging.LogUtils;
@@ -36,13 +37,6 @@ public class ExampleMod
     public static final String MODID = "basicmod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    // public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
 
 
 
@@ -55,9 +49,10 @@ public class ExampleMod
         modEventBus.addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
+        // BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         ExampleItems.register(modEventBus);
+        ExampleBlocks.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         ExampleCreativeModeTabs.register(modEventBus);
 
