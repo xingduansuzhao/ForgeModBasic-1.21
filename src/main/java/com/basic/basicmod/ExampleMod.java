@@ -1,10 +1,13 @@
 package com.basic.basicmod;
 
+import com.basic.basicmod.block.AniversarioBlock;
 import com.basic.basicmod.block.ExampleBlocks;
 import com.basic.basicmod.item.ExampleItems;
 import com.basic.basicmod.tab.ExampleCreativeModeTabs;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -24,9 +27,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -53,6 +54,7 @@ public class ExampleMod
         // Register the Deferred Register to the mod event bus so items get registered
         ExampleItems.register(modEventBus);
         ExampleBlocks.register(modEventBus);
+        AniversarioBlock.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         ExampleCreativeModeTabs.register(modEventBus);
 

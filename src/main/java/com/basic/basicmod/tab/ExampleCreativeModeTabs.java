@@ -1,6 +1,7 @@
 package com.basic.basicmod.tab;
 
 import com.basic.basicmod.ExampleMod;
+import com.basic.basicmod.block.AniversarioBlock;
 import com.basic.basicmod.block.ExampleBlocks;
 import com.basic.basicmod.item.ExampleItems;
 import net.minecraft.core.registries.Registries;
@@ -26,6 +27,7 @@ public class ExampleCreativeModeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(ExampleItems.MEDALLA_ANIVERSARIO.get());
                 output.accept(ExampleBlocks.ANIVERSARIO_STONE_ITEM.get());
+                output.accept(AniversarioBlock.ANIVERSARIO_BLOCK_ITEM.get());
             }).build());
 
     public static void register(IEventBus eventBus) {
